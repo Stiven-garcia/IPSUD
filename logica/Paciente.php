@@ -105,5 +105,17 @@ class Paciente extends Persona {
         return $resultados;
     }
     
+    function filtrar($filtro){
+        $this -> conexion -> abrir();
+        $this -> conexion -> ejecutar($this -> pacienteDAO -> filtrar($filtro));
+        $resultados = array();
+        $i=0;
+        while(($registro = $this -> conexion -> extraer()) != null){
+            $resultados[$i] = new Paciente($registro[0], $registro[1], $registro[2], $registro[3], "", "", $registro[4],$registro[5],$registro[6],$registro[7]);
+            $i++;
+        }
+        $this -> conexion -> cerrar();
+        return $resultados;
+    }
     
 }

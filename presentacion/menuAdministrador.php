@@ -14,9 +14,10 @@
 				href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
 				aria-haspopup="true" aria-expanded="false"> Consultar </a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="#">Administrador</a> <a
-						class="dropdown-item" href="index.php?pid=<?php echo base64_encode("presentacion/paciente/consultarPaciente.php")?>">Paciente</a> <a
-						class="dropdown-item" href="#">Medico</a>
+					<a class="dropdown-item" href="#">Administrador</a> 
+					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("presentacion/paciente/consultarPaciente.php")?>">Paciente</a> 
+					<a class="dropdown-item" href="index.php?pid=<?php echo base64_encode("presentacion/paciente/buscarPaciente.php")?>">consultar Paciente</a> 
+					<a class="dropdown-item" href="#">Medico</a>
 				</div></li>
 			<li class="nav-item"><a class="nav-link" href="index.php">Salida</a>
 			</li>
