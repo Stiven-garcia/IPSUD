@@ -63,8 +63,13 @@ $(document).ready(function(){
 	$("#filtrar").keyup(function(){
 		
 	var filtroDato=$("#filtrar").val();
-	<?php echo "var ruta = \"indexAjax.php?pid=" . base64_encode("presentacion/paciente/buscarPacienteAjax.php") ."&filtro=\"+filtroDato;\n"; ?>
+	if(filtroDato.length>0){
+		<?php echo "var ruta = \"indexAjax.php?pid=" . base64_encode("presentacion/paciente/buscarPacienteAjax.php") ."&filtro=\"+filtroDato;\n"; ?>
 		$("#resultadosPacientes").load(ruta);
+	}else{
+		$("#resultadosPacientes").empty();
+		}
+	
 	});
 });
 </script>
