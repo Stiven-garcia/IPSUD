@@ -42,7 +42,8 @@ include 'presentacion/menuAdministrador.php';
                                    <a class='fas fa-pencil-ruler' href='index.php?pid=" . base64_encode("presentacion/paciente/actualizarPaciente.php") . "&idPaciente=" . $p->getId() . "' data-toggle='tooltip' data-placement='left' title='Actualizar'> </a>
                                    <a class='fas fa-camera' href='index.php?pid=" . base64_encode("presentacion/paciente/actualizarFotoPaciente.php") . "&idPaciente=" . $p->getId() . "' data-toggle='tooltip' data-placement='left' title='Actualizar Foto'> </a>
                                    <a id='cambiarEstado" . $p->getId() . "' class='fas fa-power-off' href='#' data-toggle='tooltip' data-placement='left' title='" . ($p->getEstado()==0?"Habilitar":"Inhabilitar") . "'> </a>
-                          </td>";
+                                   <a class='fas fa-file-pdf' href='index.php?pid=".base64_encode("presentacion/paciente/pdfPaciente.php") ."&idPaciente=".$p->getId()."' data-toggle='tooltip' data-placement='left' title='Generar PDF'> </a>
+                           </td>";
                     echo "</tr>";
                 
                 }
