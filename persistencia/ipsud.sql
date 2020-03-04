@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-09-2019 a las 22:54:35
--- Versión del servidor: 10.3.16-MariaDB
--- Versión de PHP: 7.3.7
+-- Tiempo de generación: 02-03-2020 a las 21:30:21
+-- Versión del servidor: 10.4.8-MariaDB
+-- Versión de PHP: 7.1.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -58,6 +58,15 @@ CREATE TABLE `cita` (
   `consultorio_idconsultorio` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `cita`
+--
+
+INSERT INTO `cita` (`idcita`, `fecha`, `hora`, `medico_idmedico`, `paciente_idpaciente`, `consultorio_idconsultorio`) VALUES
+(1, '2020-03-13', '03:15:00', 1, 4, 1),
+(2, '2020-03-13', '03:20:00', 3, 1, 3),
+(3, '2020-03-13', '03:30:00', 2, 3, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -69,6 +78,15 @@ CREATE TABLE `consultorio` (
   `nombre` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `consultorio`
+--
+
+INSERT INTO `consultorio` (`idconsultorio`, `nombre`) VALUES
+(1, 'Consultorio Medicina General'),
+(2, 'Consultorio Pediatría'),
+(3, 'Consultorio Neurologia');
+
 -- --------------------------------------------------------
 
 --
@@ -79,6 +97,15 @@ CREATE TABLE `especialidad` (
   `idespecialidad` int(11) NOT NULL,
   `nombre` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `especialidad`
+--
+
+INSERT INTO `especialidad` (`idespecialidad`, `nombre`) VALUES
+(1, 'Medico General'),
+(2, 'Pediatría'),
+(3, 'Neurología');
 
 -- --------------------------------------------------------
 
@@ -95,6 +122,15 @@ CREATE TABLE `medico` (
   `tarjetaprofesional` varchar(45) NOT NULL,
   `especialidad_idespecialidad` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `medico`
+--
+
+INSERT INTO `medico` (`idmedico`, `nombre`, `apellido`, `correo`, `clave`, `tarjetaprofesional`, `especialidad_idespecialidad`) VALUES
+(1, 'Diego', 'Fernando', '1@1.com', '1', 'Tarjeta Profesional', 1),
+(2, 'Paula', 'Leon', '2@2.com', '2', 'Tarjeta Profesional', 2),
+(3, 'Juan', 'Santos', '3@3.com', '3', 'Tarjeta Profesional', 3);
 
 -- --------------------------------------------------------
 
@@ -183,25 +219,25 @@ ALTER TABLE `administrador`
 -- AUTO_INCREMENT de la tabla `cita`
 --
 ALTER TABLE `cita`
-  MODIFY `idcita` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idcita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `consultorio`
 --
 ALTER TABLE `consultorio`
-  MODIFY `idconsultorio` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idconsultorio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `especialidad`
 --
 ALTER TABLE `especialidad`
-  MODIFY `idespecialidad` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idespecialidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `medico`
 --
 ALTER TABLE `medico`
-  MODIFY `idmedico` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idmedico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `paciente`
